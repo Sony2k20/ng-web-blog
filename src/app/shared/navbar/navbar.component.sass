@@ -1,0 +1,111 @@
+@use '@angular/material' as mat
+@include mat.core()
+@import "src/assets/custom-properties.sass"
+@import "src/assets/icon-animate.sass"
+
+$icon-size: 35px
+
+//----------------Global Classes----------------//
+
+span:focus
+  outline: none
+  border: 0
+
+span
+  cursor: pointer
+  text-decoration: none
+
+//----------------navbar----------------//
+
+.navbar
+  // background: $text-gray
+  background: $white
+  min-height: 40px
+  color: $text-gray
+  font-family: Lexend
+  font-size: 1.6rem
+  padding: 0.4rem 1rem
+  overflow: hidden
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  flex-wrap: wrap
+  align-items: center
+  white-space: nowrap
+  margin-left: auto
+  margin-right: auto
+  max-width: 1400px
+
+// Ist für statische Top Leiste - tbc
+// .fixed 
+//   position: fixed
+//   width: 100%
+//   transition: 0.2s linear
+//   top: 0px
+//   z-index: 10000
+
+.nav-middle-part
+  font-family: Abel
+  color: $text-light
+
+.nav-left-part
+  width: 20%
+
+
+
+.nav-left-part a
+  text-decoration: none
+  color: $text-gray
+
+.nav-right-part
+  width: 20%
+  text-align: right
+
+.nav-item
+  font-family: Abel
+  font-size: 1.2rem
+  color: $text-light
+  text-decoration: none
+  padding: 0.3rem 1rem
+
+@media (max-width: 940px)
+  .navbar
+    align-items: center
+    flex-direction: row
+    padding: 0.4rem 0
+  .nav-left-part-mobile
+    width: 15%
+  .nav-middle-part
+    display: none
+  .nav-left-part
+    // display: none
+    text-align: center
+    width: 70%
+  .nav-right-part
+    // display: none
+    // text-align: center
+    width: 15%
+    // color: $text-gray
+  .nav-right-part div 
+    display: none
+  
+//----------------Auth icon----------------//
+
+.icon-profile
+  width: $icon-size
+  height: $icon-size
+  &::before, &::after
+    top: 0
+    left: 0
+    height: 0
+    width: 0
+
+img
+  object-fit: cover
+  width: $icon-size
+  height: $icon-size
+  border-radius: 50%
+
+@media (min-width: 940px)
+  .nav-left-part-mobile
+    display: none  
