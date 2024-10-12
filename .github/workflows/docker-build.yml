@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Write secret to a file
+      - name: Write environment to a file
         run: |
           mkdir src/environments
           echo "${{ secrets.FIREBASE_CONFIG }}" > src/environments/environment.ts
