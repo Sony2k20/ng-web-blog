@@ -27,7 +27,9 @@ jobs:
         run: npm install
 
       - name: Write secret to a file
-        run: echo "${{ secrets.FIREBASE_CONFIG }}" > src/environments/environment.prod.ts
+        run: |
+          mkdir src/environments
+          echo "${{ secrets.FIREBASE_CONFIG }}" > src/environments/environment.prod.ts
 
       - name: Build Angular App
         run: ng build --output-path=dist/app
